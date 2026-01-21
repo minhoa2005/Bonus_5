@@ -1,0 +1,15 @@
+<svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <g opacity="0.7">
+        <rect x="14" y="35" width="32" height="18" rx="2" fill="#4a90e2" />
+        <rect x="18" y="40" width="24" height="2" fill="#e6f2ff" opacity="0.5" />
+        <rect x="18" y="45" width="24" height="2" fill="#e6f2ff" opacity="0.5" />
+        <rect x="18" y="50" width="24" height="2" fill="#e6f2ff" opacity="0.5" />
+    </g>
+    <g opacity="0.9" transform="rotate(-30 30 30)">
+        <rect x="26" y="12" width="8" height="20" fill="#0056b3" />
+        <rect x="26" y="8" width="8" height="4" fill="#007bff" />
+        <path d="M26 32H34L32 38H28L26 32Z" fill="#ffc107" />
+        <path d="M28 38H32L30 42L28 38Z" fill="#ffd54f" />
+    </g>
+    <circle cx="30" cy="30" r="28" fill="#e6f2ff" opacity="0.2" />
+</svg>
