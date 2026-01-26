@@ -1,13 +1,14 @@
-import { Image, ScrollView, Text, View } from 'react-native'
-import { SafeAreaView } from 'react-native-safe-area-context'
-import CameraIcon from './assets/ic_camera.svg';
-import UserProfile from './assets/ic_user_profile_new.svg'
-import ArrowRight from './assets/arrow.svg'
-import FAQIcon from './assets/ic_question.svg'
-import LogoutIcon from './assets/ic_logout.svg'
-import SettingsIcon from './assets/ic_setting.svg'
-import SupportIcon from './assets/ic_support.svg'
-import AdminIcon from './assets/ic_admin.svg'
+import { Image, ScrollView, Text, View } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
+import ArrowRight from './assets/arrow.svg';
+import IcCamera from './icon/IcCamera';
+import IcUserProfile from './icon/IcUserProfile';
+import IcSetting from './icon/IcSetting';
+import IcSupport from './icon/IcSupport';
+import IcQuestion from './icon/IcQuestion';
+import IcAdmin from './icon/IcAdmin';
+import IcLogout from './icon/IcLogout';
+import Arrow from './icon/Arrow';
 
 export default function ProfileScreen() {
     return (
@@ -17,7 +18,7 @@ export default function ProfileScreen() {
                 <View style={{ backgroundColor: '#dbf1fe', alignSelf: 'center', position: 'absolute', bottom: -50, borderRadius: "50%", width: 100, height: 100, borderWidth: 2, borderColor: '#fefefe', overflow: 'hidden' }}>
                     <Text style={{ color: '#1294e8', textAlign: 'center', lineHeight: 100, fontSize: 40, fontWeight: 'bold' }}>K</Text>
                 </View>
-                <CameraIcon width={30} height={30} style={{ position: 'absolute', bottom: -50, right: 165 }} />
+                <IcCamera style={{ position: 'absolute', bottom: -50, right: 165 }} />
             </View>
             <View style={{ marginTop: 60, alignItems: 'center' }}>
                 <Text style={{ fontWeight: 'bold' }}>Phạm Quang Khang (KHANGPQ3)</Text>
@@ -26,45 +27,45 @@ export default function ProfileScreen() {
             <ScrollView style={{ display: 'flex', paddingHorizontal: 16, marginTop: 20 }}>
                 <View style={{ display: 'flex', flexDirection: 'row', alignContent: 'center', justifyContent: 'space-between', paddingVertical: 12, borderBottomWidth: 1, borderBottomColor: '#e3e1e4' }}>
                     <View style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', gap: 8 }}>
-                        <UserProfile />
+                        <IcUserProfile />
                         <Text style={{ fontWeight: 'bold' }}>My Profile</Text>
                     </View>
-                    <ArrowRight />
+                    <Arrow />
                 </View>
                 <View style={{ display: 'flex', flexDirection: 'row', alignContent: 'center', justifyContent: 'space-between', paddingVertical: 12, borderBottomWidth: 1, borderBottomColor: '#e3e1e4' }}>
                     <View style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', gap: 8 }}>
-                        <SettingsIcon />
+                        <IcSetting />
                         <Text style={{ fontWeight: 'bold' }}>Settings</Text>
                     </View>
-                    <ArrowRight />
+                    <Arrow />
                 </View>
                 <View style={{ display: 'flex', flexDirection: 'row', alignContent: 'center', justifyContent: 'space-between', paddingVertical: 12, borderBottomWidth: 1, borderBottomColor: '#e3e1e4' }}>
                     <View style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', gap: 8 }}>
-                        <SupportIcon />
+                        <IcSupport />
                         <Text style={{ fontWeight: 'bold' }}>Support</Text>
                     </View>
-                    <ArrowRight />
+                    <Arrow />
                 </View>
                 <View style={{ display: 'flex', flexDirection: 'row', alignContent: 'center', justifyContent: 'space-between', paddingVertical: 12, borderBottomWidth: 1, borderBottomColor: '#e3e1e4' }}>
                     <View style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', gap: 8 }}>
-                        <FAQIcon />
+                        <IcQuestion />
                         <Text style={{ fontWeight: 'bold' }}>FAQ</Text>
                     </View>
-                    <ArrowRight />
+                    <Arrow />
                 </View>
                 <View style={{ display: 'flex', flexDirection: 'row', alignContent: 'center', justifyContent: 'space-between', paddingVertical: 12, borderBottomWidth: 1, borderBottomColor: '#e3e1e4' }}>
                     <View style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', gap: 8 }}>
-                        <AdminIcon />
+                        <IcAdmin />
                         <Text style={{ fontWeight: 'bold' }}>Admin</Text>
                     </View>
-                    <ArrowRight />
+                    <Arrow />
                 </View>
                 <View style={{ display: 'flex', flexDirection: 'row', alignContent: 'center', justifyContent: 'space-between', paddingVertical: 12 }}>
                     <View style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', gap: 8 }}>
-                        <LogoutIcon />
+                        <IcLogout />
                         <Text style={{ fontWeight: 'bold' }}>Logout</Text>
                     </View>
-                    <ArrowRight />
+                    <Arrow />
                 </View>
             </ScrollView>
         </SafeAreaView >

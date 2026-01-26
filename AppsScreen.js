@@ -5,6 +5,8 @@ import Search from './assets/ic_search_gray.svg';
 import DatingIcon from './assets/ic_app_dating.svg';
 import PaySlitIcon from './assets/ic_app_payslip.svg';
 export default function AppsScreen() {
+    const tabBarHeight = useBottomTabBarHeight();
+    const insets = useSafeAreaInsets();
     const workItems = [
         {
             icon: require('./assets/ic_approve_now.png'),
@@ -55,8 +57,7 @@ export default function AppsScreen() {
             description: "Dating feature."
         },
         {
-            icon: <PaySlitIcon width={40} height={40} style={{ marginRight: 10 }} />,
-            isSVG: true,
+            icon: <PaySlitIcon />,
             title: "Payslip",
             description: "Payslip"
         },
@@ -132,11 +133,11 @@ export default function AppsScreen() {
                     <Text style={{ color: '#939393', fontWeight: 'bold' }}>WORK</Text>
                 </View>
                 {workItems.map((item, index) => (
-                    <View key={index} style={{ display: 'flex', flexDirection: 'row', alignItems: 'flex-start', paddingHorizontal: 10, paddingTop: 10, paddingBottom: 10, borderBottomWidth: 1, borderColor: '#e4e2e5' }}>
+                    <View key={index} style={{ flexDirection: 'row', alignItems: 'center' }}>
                         <Image source={item.icon} style={{ width: 40, height: 40, marginRight: 10 }} />
-                        <View style={{ flex: 1 }}>
-                            <Text style={{ fontSize: 16, fontWeight: 'bold' }}>{item.title}</Text>
-                            <Text style={{ fontSize: 14, color: '#606060', flexShrink: 1, flexWrap: 'wrap' }}>{item.description}</Text>
+                        <View>
+                            <Text style={{ fontSize: 16, fontWeight: 'bold', paddingHorizontal: 10, paddingTop: 10 }}>{item.title}</Text>
+                            <Text style={{ fontSize: 14, color: '#606060', paddingHorizontal: 10, paddingBottom: 10 }}>{item.description}</Text>
                         </View>
                     </View>
                 ))}
@@ -144,48 +145,36 @@ export default function AppsScreen() {
                     <Text style={{ color: '#939393', fontWeight: 'bold' }}>UTILITIES</Text>
                 </View>
                 {utilitiesItems.map((item, index) => (
-                    <View key={index} style={{ display: 'flex', flexDirection: 'row', alignItems: 'flex-start', paddingHorizontal: 10, paddingTop: 10, paddingBottom: 10, borderBottomWidth: 1, borderColor: '#e4e2e5' }}>
-                        {item?.isSVG ? item.icon : <Image source={item.icon} style={{ width: 40, height: 40, marginRight: 10 }} />}
-                        <View style={{ flex: 1 }}>
-                            <Text style={{ fontSize: 16, fontWeight: 'bold' }}>{item.title}</Text>
-                            <Text style={{ fontSize: 14, color: '#606060', flexShrink: 1, flexWrap: 'wrap' }}>{item.description}</Text>
-                        </View>
+                    <View key={index}>
+                        <Text style={{ fontSize: 16, fontWeight: 'bold', paddingHorizontal: 10, paddingTop: 10 }}>{item.title}</Text>
+                        <Text style={{ fontSize: 14, color: '#606060', paddingHorizontal: 10, paddingBottom: 10 }}>{item.description}</Text>
                     </View>
                 ))}
                 <View style={{ backgroundColor: '#efedf0', width: '100%', padding: 8 }}>
                     <Text style={{ color: '#939393', fontWeight: 'bold' }}>NEWS</Text>
                 </View>
                 {newsItems.map((item, index) => (
-                    <View key={index} style={{ display: 'flex', flexDirection: 'row', alignItems: 'flex-start', paddingHorizontal: 10, paddingTop: 10, paddingBottom: 10, borderBottomWidth: 1, borderColor: '#e4e2e5' }}>
-                        <Image source={item.icon} style={{ width: 40, height: 40, marginRight: 10 }} />
-                        <View style={{ flex: 1 }}>
-                            <Text style={{ fontSize: 16, fontWeight: 'bold' }}>{item.title}</Text>
-                            <Text style={{ fontSize: 14, color: '#606060', flexShrink: 1, flexWrap: 'wrap' }}>{item.description}</Text>
-                        </View>
+                    <View key={index}>
+                        <Text style={{ fontSize: 16, fontWeight: 'bold', paddingHorizontal: 10, paddingTop: 10 }}>{item.title}</Text>
+                        <Text style={{ fontSize: 14, color: '#606060', paddingHorizontal: 10, paddingBottom: 10 }}>{item.description}</Text>
                     </View>
                 ))}
                 <View style={{ backgroundColor: '#efedf0', width: '100%', padding: 8 }}>
                     <Text style={{ color: '#939393', fontWeight: 'bold' }}>WIKI</Text>
                 </View>
                 {wikiItems.map((item, index) => (
-                    <View key={index} style={{ display: 'flex', flexDirection: 'row', alignItems: 'flex-start', paddingHorizontal: 10, paddingTop: 10, paddingBottom: 10, borderBottomWidth: 1, borderColor: '#e4e2e5'   }}>
-                        <Image source={item.icon} style={{ width: 40, height: 40, marginRight: 10 }} />
-                        <View style={{ flex: 1 }}>
-                            <Text style={{ fontSize: 16, fontWeight: 'bold' }}>{item.title}</Text>
-                            <Text style={{ fontSize: 14, color: '#606060', flexShrink: 1, flexWrap: 'wrap' }}>{item.description}</Text>
-                        </View>
+                    <View key={index}>
+                        <Text style={{ fontSize: 16, fontWeight: 'bold', paddingHorizontal: 10, paddingTop: 10 }}>{item.title}</Text>
+                        <Text style={{ fontSize: 14, color: '#606060', paddingHorizontal: 10, paddingBottom: 10 }}>{item.description}</Text>
                     </View>
                 ))}
                 <View style={{ backgroundColor: '#efedf0', width: '100%', padding: 8 }}>
                     <Text style={{ color: '#939393', fontWeight: 'bold' }}>GAMES</Text>
                 </View>
                 {gameItems.map((item, index) => (
-                    <View key={index} style={{ display: 'flex', flexDirection: 'row', alignItems: 'flex-start', paddingHorizontal: 10, paddingTop: 10, paddingBottom: 10, borderBottomWidth: 1, borderColor: '#e4e2e5' }}>
-                        {item?.isSVG ? item.icon : <Image source={item.icon} style={{ width: 40, height: 40, marginRight: 10 }} />}
-                        <View style={{ flex: 1 }}>
-                            <Text style={{ fontSize: 16, fontWeight: 'bold' }}>{item.title}</Text>
-                            <Text style={{ fontSize: 14, color: '#606060', flexShrink: 1, flexWrap: 'wrap' }}>{item.description}</Text>
-                        </View>
+                    <View key={index}>
+                        <Text style={{ fontSize: 16, fontWeight: 'bold', paddingHorizontal: 10, paddingTop: 10 }}>{item.title}</Text>
+                        <Text style={{ fontSize: 14, color: '#606060', paddingHorizontal: 10, paddingBottom: 10 }}>{item.description}</Text>
                     </View>
                 ))}
             </ScrollView>
