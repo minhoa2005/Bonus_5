@@ -1,0 +1,32 @@
+const searchFilter = () => {
+        if (search) {
+            const workData = workItems.filter(item => item.title.toLocaleLowerCase().includes(search.toLocaleLowerCase()));
+            setFilteredWorkItems(workData);
+            const utilitiesData = utilitiesItems.filter(item => item.title.toLocaleLowerCase().includes(search.toLocaleLowerCase()));
+            setFilteredUtilitiesItems(utilitiesData);
+            const newsData = newsItems.filter(item => item.title.toLocaleLowerCase().includes(search.toLocaleLowerCase()));
+            setFilteredNewsItems(newsData);
+            const wikiData = wikiItems.filter(item => item.title.toLocaleLowerCase().includes(search.toLocaleLowerCase()));
+            setFilteredWikiItems(wikiData);
+            const gameData = gameItems.filter(item => item.title.toLocaleLowerCase().includes(search.toLocaleLowerCase()));
+            setFilteredGameItems(gameData);
+        }
+        else {
+            setFilteredWorkItems(workItems);
+            setFilteredUtilitiesItems(utilitiesItems);
+            setFilteredNewsItems(newsItems);
+            setFilteredWikiItems(wikiItems);
+            setFilteredGameItems(gameItems);
+        }
+    }
+    useEffect(() => {
+        searchFilter();
+    }, [search])
+
+    const [viewStyle, setViewStyle] = useState('default');
+    const [search, setSearch] = useState('');
+    const [filteredWorkItems, setFilteredWorkItems] = useState([]);
+    const [filteredUtilitiesItems, setFilteredUtilitiesItems] = useState([]);
+    const [filteredNewsItems, setFilteredNewsItems] = useState([]);
+    const [filteredWikiItems, setFilteredWikiItems] = useState([]);
+    const [filteredGameItems, setFilteredGameItems] = useState([]);
